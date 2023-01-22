@@ -41,6 +41,7 @@ button {
     rgba(187, 187, 187, 0) 77%,
     rgba(40, 40, 40, 0.2) 98%
   );
+  overflow: scroll;
 }
 
 .circle {

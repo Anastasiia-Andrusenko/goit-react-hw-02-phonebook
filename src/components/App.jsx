@@ -50,13 +50,14 @@ export class App extends Component {
 
   render() {
     const contacts = this.filteredContacts();
+    const filter = this.state.filter;
     // console.log(contacts);
     return <div className="container">
       <div className="in_container">
       <div>
-        <h2 className="title">Phonebook</h2>
+          <h2 className="title">Phonebook</h2>
+          <Filter onFilterInput={this.onFilterInput} filter={filter} />
           <ContactForm onAddContact={this.onAddContact}/>
-          <Filter onFilterInput={this.onFilterInput} />
       </div>
       <div>
         <h2 className="title">Contacts</h2>

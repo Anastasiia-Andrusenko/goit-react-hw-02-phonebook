@@ -2,9 +2,10 @@ import css from "../Contact/Contact.module.css";
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
-export const Contact = ({ contacts, onDelete }) => {
+
+export const Contact = ({ contact, onDelete }) => {
   return <>
-    {contacts.map((contact) => <li key={contact.id} className={css.item} onClick={showDetail}>
+     <li className={css.item} onClick={showDetail}>
       <div className={css.contact}>
         <p className={css.name}>{contact.name}</p>
         <p
@@ -21,7 +22,6 @@ export const Contact = ({ contacts, onDelete }) => {
         delete
       </button>
     </li>
-    )}
   </>
 }
 
@@ -39,11 +39,9 @@ const showDetail = (evt) => {
 }
 
 Contact.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
+  contact: PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+    }).isRequired,
 }

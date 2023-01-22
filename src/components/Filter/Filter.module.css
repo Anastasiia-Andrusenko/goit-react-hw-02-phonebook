@@ -3,8 +3,8 @@
 }
 
 .form {
-  position: fixed;
-  top: 140px;
+  position: absolute;
+  /* top: 70px; */
 }
 
 .input {
