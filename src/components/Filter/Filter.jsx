@@ -6,11 +6,9 @@ import PropTypes from 'prop-types';
 export class Filter extends Component {  
 
   onInput = (evt) => {
-    let filterValue =  this.props.filter;
-    filterValue = evt.currentTarget.value.trim();
+    const filterValue = evt.currentTarget.value.trim();
     console.log(filterValue);
     this.props.onFilterInput(filterValue);
-    // this.props.filter = filterValue;
   };
 
 
@@ -23,6 +21,7 @@ export class Filter extends Component {
             className={css.input}
             name="txt"
             onChange={this.onInput}
+            value={this.props.filter}
           >
           </input>
         </label>
@@ -33,5 +32,5 @@ export class Filter extends Component {
 
 Filter.propTypes = {
   onFilterInput: PropTypes.func.isRequired,
-  filter: PropTypes.string,
+  filter: PropTypes.string.isRequired,
 }
